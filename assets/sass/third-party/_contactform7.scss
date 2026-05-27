@@ -1,0 +1,23 @@
+.wpcf7 { 
+    .wpcf7-file { background-color: $white;	border: 1px solid $bordercolor;	display: block;	padding: 10px; width: 100%;}
+	.wpcf7-radio { display: block; padding-bottom: 10px;}
+	.wpcf7-list-item { display: block; }
+	.ajax-loader {margin-left: 1em;	}    
+}
+
+.wpcf7-not-valid-tip {	@include fontsize(11);  text-transform: uppercase; letter-spacing: 1px;	color: #D8000C;	display: block;	margin-top: -30px;	padding: 30px 0;
+	&:before {font: 26px/30px dashicons; margin-right: 10px; vertical-align: middle;  content: "\f158";	}
+}
+
+
+// error icons use WP dashicons set https://developer.wordpress.org/resource/dashicons/
+
+.wpcf7-response-output.wpcf7-validation-errors { color: #D8000C; background-color: #FFBABA; display: none; border: 0; padding: 10px;}
+.wpcf7-response-output.wpcf7-mail-sent-ok { color: #4F8A10; background-color: #DFF2BF; display: none; border: 0; padding: 10px;}
+.wpcf7-mail-sent-ok:before, .wpcf7-validation-errors:before { font: 26px/30px dashicons; margin-right: 16px; vertical-align: middle;}
+.wpcf7-mail-sent-ok:before {  content: "\f147"; }
+.wpcf7-validation-errors:before { content: "\f158";}
+
+.screen-reader-response {  @include visuallyhidden; }
+
+    

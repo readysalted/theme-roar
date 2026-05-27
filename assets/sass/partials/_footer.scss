@@ -1,0 +1,230 @@
+.main-footer{
+	//background-color: $txtcolor;
+	//padding: 50px 0 0px;
+
+	@media screen and (min-width: 990px) {
+		//padding: 150px 0 0px;
+	}
+
+	.container{}
+	.footer-top{
+		padding-bottom: 50px;
+		border-bottom: 1px solid rgba(95, 95, 95, 0.2);
+		.flex-holder{
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			align-self: stretch;
+			flex-wrap: wrap;
+
+			@media screen and (min-width: 1200px) {
+				flex-wrap: nowrap;
+			}
+
+			.col{
+				width: 100%;
+				text-align: center;
+				margin-bottom: 40px;
+				&:last-of-type{
+					margin-bottom: 0;
+				}
+				@media screen and (min-width: 990px) {
+					width: auto;
+					text-align: left;
+				}
+				@media screen and (min-width: 1200px) {
+					margin-bottom: 0px;
+				}
+
+				&:nth-of-type(1){
+					width: 100%;
+					text-align: center;
+					@media screen and (min-width: 1200px) {
+						width: auto;
+						text-align: left;
+					}
+				}
+
+				.eyebrow{
+					font-size: 0.875rem;
+					font-weight: $basefontbold;
+					margin-bottom: 32px;
+				}
+				p{
+					font-size: 0.75rem;
+					font-weight: $basefontregular;
+					color: $white;
+					strong{}
+				}
+				a{
+					color: $white;
+					&:hover{
+						color: $brandcolor;
+					}
+				}
+				.logos-holder{
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					align-content: center;
+					flex-direction: row;
+					justify-content: center;
+					max-width: 100%;
+					gap: 20px;
+
+					@media screen and (min-width: 1200px) {
+						max-width: 250px;
+						justify-content: flex-start;
+						gap: 0;
+					}
+					.logo-holder{
+						width: calc(33.33% - 18px);
+				    	text-align: center;
+				    	margin-right: 0px;
+						margin-bottom: 0px;
+						@media screen and (min-width: 660px) {
+							width: auto;
+						}
+						@media screen and (min-width: 1200px) {
+							margin-bottom: 32px;
+							margin-right: 20px;
+						}
+					}
+					img{
+						height: 51px;
+						max-width: 78px;
+						object-fit: contain;
+					}
+				}
+				p.btn{
+					margin: 32px 0 0;
+					a{
+						font-size: 0.75rem;
+						padding: 10px;
+						background-color: #373737;
+						margin: 0 5px 0 0;
+						&:hover{
+							color: $white;
+							-webkit-box-shadow: 0 0 0 2px #373737;
+    						box-shadow: 0 0 0 2px #373737;
+						}
+					}
+				}
+				ul{
+					list-style: none;
+					margin: 0;
+					padding: 0;
+					li{
+						a{
+							font-size: 0.75rem;
+							font-weight: $basefontregular;
+							@include fontsmoothing;
+						}
+					}
+				}
+				/*
+				ul#menu-footer-2{
+					display: grid;
+					grid-template-columns: repeat(2, 1fr);
+					grid-template-rows: repeat(4, 1fr);
+					//grid-column-gap: 0px;
+					grid-row-gap: 0px;
+					grid-template-columns: auto auto;
+					//max-width: 320px;
+					margin: 0 auto;
+					text-align: left;
+					grid-column-gap: 20px;
+					max-width: 80%;
+
+					@media screen and (min-width: 400px) {
+						grid-column-gap: 50px;
+						max-width: 290px;
+					}
+					@media screen and (min-width: 990px) {
+						grid-template-columns: 82px auto;
+						max-width: none;
+						margin: 0;
+					}
+
+					.menu-item-126 { grid-area: 1 / 1 / 2 / 2; }
+					.menu-item-122 { grid-area: 1 / 2 / 2 / 3; }
+					.menu-item-125 { grid-area: 2 / 1 / 3 / 2; }
+					.menu-item-121 { grid-area: 2 / 2 / 3 / 3; }
+					.menu-item-124 { grid-area: 3 / 1 / 4 / 2; }
+					.menu-item-120 { grid-area: 3 / 2 / 4 / 3; }
+					.menu-item-123 { grid-area: 4 / 1 / 5 / 2; }
+					.menu-item-119 { grid-area: 4 / 2 / 5 / 3; }
+				}*/
+
+				.social-icons{
+					p{
+						a{
+							margin-left: 0;
+							margin-right: 5px;
+							svg{}
+						}
+					}
+				}
+			}
+		}
+	}
+	.footer-bottom{
+		padding: 50px 0;
+		.flex-holder{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+
+			@media screen and (min-width: 800px) {
+				flex-direction: row;
+			}
+
+			ul{
+				display: flex;
+				margin: 0;
+				padding: 0;
+				li{
+					padding: 0;
+					padding: 0;
+				}
+			}
+		}
+		.review-links{
+			p{
+				margin-bottom: 10px;
+			}
+			img{
+				height: 24px;
+			}
+		}
+		.logo-holder{
+			margin: 32px 0;
+
+			@media screen and (min-width: 800px) {
+				margin: 0;
+			}
+
+			a{
+				img{
+					width: 180px;
+				}
+			}
+		}
+		p, a{
+			font-size: 0.875rem;
+			color: $white;
+			margin: 0;
+			span{
+				color: $highlightcolor;
+				margin: 0 5px;
+			}
+		}
+		a{
+			color: $brandcolor;
+			&:hover{
+				color: $highlightcolor;
+			}
+		}
+	}
+}

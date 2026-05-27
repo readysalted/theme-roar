@@ -1,0 +1,87 @@
+//* = Positioning //-------------------------------------------------------------- */
+@mixin center-element { margin-left: auto;	margin-right: auto; display: block;}
+@mixin zero { margin:0; padding:0;}
+@mixin zero-list { margin:0; padding:0; list-style: none;}
+
+@mixin box-sizing($box-model:border-box) { -webkit-box-sizing: $box-model; -moz-box-sizing: $box-model;  box-sizing: $box-model;}
+
+@mixin clearfix {*zoom: 1;
+	&:before, &:after {	display: table;	content: ""; }
+	&:after {clear: both;}
+}
+
+//* = Typography //-------------------------------------------------------------- */
+// converts fontsize px to rem
+@function calculaterem($size) {	$remsize: $size/16;	@return #{$remsize}rem; }
+@mixin fontsize($size) {font-size: $size+px; font-size: calculaterem($size); }
+
+//* = Border Radius //-------------------------------------------------------------- */
+@mixin border-radius($radius) { -webkit-border-radius: $radius; -moz-border-radius: $radius; border-radius: $radius;}
+
+//* = Letter Spacing //-------------------------------------------------------------- */
+@mixin letter-spacing($spacing) {
+  letter-spacing: ($spacing / 1000) * 1em;
+}
+
+//* = Fluid text //-------------------------------------------------------------- */
+@mixin fluid-type($min, $fluid, $max) {
+  font-size: unquote("clamp(#{$min}, #{$fluid}, #{$max})");
+} 
+
+//* = Font Smoothing //-------------------------------------------------------------- */
+@mixin fontsmoothing{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+//* = Hidden Things  //------------------------------------------------------------ */
+@mixin hide { display: none !important; visibility: hidden;  @include zero; width: 1px; height: 1px;}
+@mixin visuallyhidden {	clip: rect(1px, 1px, 1px, 1px);	height: 1px; overflow: hidden; position: absolute !important; width: 1px; word-wrap: normal !important; }	
+
+@mixin coverimage {-webkit-background-size: cover;  -moz-background-size: cover;  -o-background-size: cover;  background-size: cover; }
+
+//* = Underline Text Link //-------------------------------------------------------------- */
+@mixin underlinelink{
+	position: relative;
+	font-weight: $basefontbold;
+	color: $brandcolor;
+	text-underline-offset: 0.23em;
+	text-decoration: solid underline rgba(0, 31, 82, 0.1) 1.5px;
+	transition: text-decoration $transitiontime $transitionease;
+    -webkit-text-decoration-line: underline;
+    -webkit-text-decoration-color: rgba(0, 31, 82, 0.1);
+    -webkit-text-decoration-style: solid;
+    -webkit-text-decoration-thickness: 1.5px;
+	&:hover{
+		text-decoration: solid underline $brandcolor 1.5px;
+      -webkit-text-decoration-color: $brandcolor;
+	}
+}
+
+//* = Main Button //-------------------------------------------------------------- */
+@mixin mainbutton{
+	font-family: $basefont;
+  color: $black;
+  //@include fluid-type(0.9375rem, "0.88rem + 0.12vw", 1.125rem);
+  font-size: 1rem;
+  line-height: 1;
+  border-radius: 4px;
+  font-weight: $basefontbold;
+  background-color: $brandcolor;
+  display: inline-block;
+  padding: 16px 30px;
+  text-transform: capitalize;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow $transitiontime $transitionease;
+  text-decoration: none;
+  text-wrap: nowrap;
+  @media screen and (min-width: 768px) {
+    padding: 18px 30px;
+  }
+  &:hover{
+    -webkit-box-shadow: 0 0 0 2px $brandcolor;
+    box-shadow: 0 0 0 2px $brandcolor;
+  }
+}

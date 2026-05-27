@@ -1,0 +1,27 @@
+<div class="social-icons">
+    <?php if( get_field('social_facebook', 'option') ): ?>
+    <a href="<?php echo get_field('social_facebook', 'option'); ?>" target="_blank" rel="noopener">
+        <svg role="img" class="facebook social-icon"><use xlink:href="#facebook" /><title>Facebook</title></svg>
+    </a>
+    <?php endif; ?>
+    <?php if( get_field('social_twitter', 'option') ): ?>
+    <a href="<?php echo get_field('social_twitter', 'option'); ?>" target="_blank" rel="noopener">
+        <svg role="img" class="twitter social-icon"><use xlink:href="#twitter" /><title>Twitter</title></svg>
+    </a>
+    <?php endif; ?>
+    <?php if( get_field('social_linkedin', 'option') ): ?>
+    <a href="<?php echo get_field('social_linkedin', 'option'); ?>" target="_blank" rel="noopener">
+        <svg role="img" class="linkedin social-icon"><use xlink:href="#linkedin" /><title>Linkedin</title></svg>
+    </a>
+    <?php endif; ?>
+    <?php if( get_field('social_instagram', 'option') ): ?>
+    <a href="<?php echo get_field('social_instagram', 'option'); ?>" target="_blank" rel="noopener">
+        <svg role="img" class="instagram social-icon"><use xlink:href="#instagram" /><title>Instagram</title></svg>
+    </a>
+    <?php endif; ?>
+    <?php if( get_field('social_youtube', 'option') ): ?>
+    <a href="<?php echo get_field('social_youtube', 'option'); ?>" target="_blank" rel="noopener">
+        <svg role="img" class="youtube social-icon"><use xlink:href="#youtube" /><title>Youtube</title></svg>
+    </a>
+    <?php endif; ?>
+</div>

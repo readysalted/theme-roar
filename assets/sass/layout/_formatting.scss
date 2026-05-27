@@ -1,0 +1,99 @@
+@import url("https://use.typekit.net/fzv0rvo.css");
+*, *:after, *:before { @include box-sizing;}
+html { font-size: 16px; min-height: 100%; width: 100%;  @include box-sizing; background-color: #181818; overflow-x: hidden; }
+body { color: $white; font-family: $basefont; font-weight: $basefontnormal; overflow-x: hidden; padding-top: 70px;
+    @media screen and (min-width: 768px) {
+        //padding-top: 160px;
+        padding-top: 78px;
+    }
+}
+//body.home { padding-top: 110px; }
+
+img{ -ms-interpolation-mode: bicubic; vertical-align:bottom; width: auto; max-width: 100%; height: auto;}
+a.imgwrap, a.imgwrap:hover { border:none; background:none; }
+
+video {height: auto; max-width: 100%; }
+
+embed, iframe, object { max-width: 100%; height: auto;}
+
+
+a {	color: $linkcolor; 	text-decoration: $linkdecoration; transition: all $transitiontime $transitionease;
+    //&:focus { outline-style: dotted;}
+    &:hover, &:active {outline-style:none; color: $linkcolorhover; }
+}
+
+.basetext { @include fontsize($basefontsize); line-height: $baselineheight;}
+
+.btn{
+    a{
+        @include mainbutton;
+    }
+}
+
+.social-icons{
+    p{
+        top: 2px;
+        height: 16px;
+        svg { width: 100%; max-width: 20px; height: auto!important; max-height: 18px; transition: $transitiontime $transitionease; }   
+        .social-icon{
+            fill:#49C1E7;
+            &:hover {
+                fill: $brandcolor;
+            }
+        }
+        .facebook,
+        .twitter,
+        .linkedin,
+        .instagram,
+        .gbp,
+        .tiktok,
+        .youtube{fill: $white; }
+        svg path { fill: inherit;}
+        a{
+            display: inline-block;
+            height: 16px;
+            margin-left: 5px;
+            &:hover{
+                svg{
+                    fill: $brandcolor;
+                }
+            }
+        }
+    }
+}
+
+hr {border: 0; height: 1px; background: $hrcolor; margin: 10px 0;}
+
+.hide { @include hide;}
+.screen-hide {@include visuallyhidden; }
+.clear { clear: both; @include clearfix;}
+
+.container-large{
+    max-width: 1300px;
+    margin: 0 auto;
+    @media (max-width: 1350px){
+        padding: 0 1.25em;
+    }
+}
+.container{
+    max-width: 1245px;
+    margin: 0 auto;
+    @media (max-width: 1295px){
+        padding: 0 1.25em;
+    }
+}
+
+// Image positions
+
+.tl { background-position: left top;}
+.tc { background-position: center top;}
+.tr { background-position: right top;}
+
+.cl { background-position: left center;}
+.cc { background-position: center center;}
+.cr { background-position: right center;}
+
+.bl { background-position: left bottom;}
+.bc { background-position: center bottom;}
+.br { background-position: right bottom;}
+

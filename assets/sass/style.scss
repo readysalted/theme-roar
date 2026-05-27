@@ -1,0 +1,31 @@
+// +=  Base =+ ---------------------------------------------------------------------- */
+@import "base/base";
+@import "base/mixins";
+@import "base/breakpoints";
+@import "base/grid"; 
+@import "base/normalize";
+
+
+// +=  layout =+ ------------------------------------------------------------------ */
+@import "layout/formatting";
+@import "layout/typography";
+@import "layout/forms";
+@import "layout/lists";
+@import "layout/tables";
+
+
+// +=  Partials =+ ------------------------------------------------------------------ */
+@import "partials/header";
+@import "partials/footer";
+@import "partials/posts";
+@import "partials/pages";
+@import "partials/sidebar";
+@import "partials/search";
+
+
+// +=  Third Party =+ --------------------------------------------------------------- */
+@import "third-party/fancybox"; 
+@import "third-party/wordpress_base"; 
+@import "third-party/contactform7"; 
+@import "third-party/swiper";   
+@import "third-party/aos";

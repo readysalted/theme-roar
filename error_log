@@ -1,0 +1,4 @@
+[05-Apr-2026 15:18:49 Europe/London] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/roardigitalmarke/public_html/wp-content/themes/theme-roar/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/roardigitalmarke/public_html/wp-content/themes/theme-roar/index.php on line 2

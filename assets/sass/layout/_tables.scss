@@ -1,0 +1,13 @@
+table { width:100%; border-collapse: collapse; margin: 0 0 30px;
+    thead th {}
+    th { background-color: $tableth;}
+    tr { background-color: $tableodd;
+        &:nth-child(even) { background-color: $tableeven; }	
+    }
+    td {}
+	th, td { border:1px solid $tableborder;  padding:15px 10px;
+        &:first-child {}
+        &::last-child {}
+    }
+	caption { @include fontsize ($captionsize); color: $captioncolor;  margin: 15px 0 0 0; padding:0; caption-side:top; text-align:center; }  
+}

@@ -1,0 +1,92 @@
+// += Base Information =+  -------------------------------------------------------------------------------- //
+
+$maxwidth					: 1200px; 
+$radius						: 10px;
+
+// += Colours =+  ----------------------------------------------------------------------------------------- //
+
+$black						: #181818;
+$white						: #fff;
+
+$basecolor					: $white;
+$txtcolor					: #262626;
+
+$brandcolor					: #FFB6E2; // Pink
+$highlightcolor				: #262626; // Black
+
+$secondcolor				: #00408d;
+$subtlecolor				: #f4f4f4;
+
+$bordercolor				: #ccc;
+$hrcolor                    : $subtlecolor;
+
+// += Typeography =+  ------------------------------------------------------------------------------------- //
+
+$baicsanserif				: Arial, Helvetica, sans-serif;
+$basicserif					: Georgia, "Times New Roman", Times, serif;
+
+$basefont					: 'roboto', $baicsanserif;
+$basefontlight				: 300;
+$basefontnormal				: 400;
+$basefontregular			: 400;
+$basefontmedium				: 500;
+$basefontbold				: 700;
+$basefontsize				: 16;
+$baselineheight             : 1.5;
+
+$basefontcon				: 'roboto-condensed', $baicsanserif;
+$basefontconalt				: 'Roboto Condensed', $baicsanserif;
+$basefontconregular			: 400;
+$basefontconmedium			: 500;
+$basefontconbold			: 700;
+
+$altfont					: 'transducer-condensed', $baicsanserif; 
+$altfontnormal				: 400;
+$altfontmedium				: 500;
+$altfontbold				: 600; 
+$altfontsize				: 16;
+$altlineheight              : 1.5;
+
+
+$codefont 					: Monaco, Courier New, monospace;
+
+
+// += Links=+  ------------------------------------------------------------------------------------------ //
+
+$linkcolor					: $brandcolor;
+$linkcolorhover				: darken( $linkcolor, 20% );
+$linkdecoration				: none;
+
+
+// += Forms=+  ------------------------------------------------------------------------------------------ //
+
+$placeholdercolor           : $txtcolor;
+
+$formbordercolor            : $bordercolor;
+$formborder                 : 1px solid $formbordercolor ;
+$formbackground             : $white;
+$formtxtcolor               : $txtcolor;
+$formtxtsize                : 16px; 
+
+$labeltxtsize               : 12;
+$labeltxtcolor              : $txtcolor;
+
+
+// += Tables=+  ------------------------------------------------------------------------------------------ //
+
+$tableth        : $basecolor;
+$tableodd       : $basecolor;
+$tableeven      : $basecolor;
+$tableborder    : $bordercolor;
+
+$captioncolor   : $txtcolor;
+$captionsize    : 14;
+
+// += Transitions =+  ------------------------------------------------------------------------------------- //
+
+$transitionduration			: .2s;
+$transitiontime				: .2s;
+$transitionease				: ease-in-out;
+
+
+

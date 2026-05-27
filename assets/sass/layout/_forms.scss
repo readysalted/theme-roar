@@ -1,0 +1,54 @@
+// -------------Placeholder Text
+
+::-webkit-input-placeholder {color: $placeholdercolor;}
+:-moz-placeholder {	color: $placeholdercolor;}
+::-moz-placeholder {color: $placeholdercolor; opacity: 1;}
+:-ms-input-placeholder {color: $placeholdercolor;}
+
+
+
+// ------------- Form Things
+fieldset { border: $formborder; margin-bottom: 20px; padding: 0 10px 10px 10px;}
+legend {  @include zero; caption-side:top; text-align:center; @include fontsize($labeltxtsize); color: $labeltxtcolor; }
+
+.input { font-family: $basefont; border-radius: 0;  outline: none; border: $formborder; color: $formtxtcolor; background-color: $formbackground; font-size: $formtxtsize;  width: 100%; padding: 10px; margin-bottom: 15px;
+    &:hover { border-color: darken( $formbordercolor , 10% ); outline: none;}
+    &:focus { border-color: darken( $formbordercolor , 20% ); outline: none;}
+}
+
+label {  @include fontsize($labeltxtsize); }
+
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"] {  @extend .input; -webkit-appearance: none;  }
+
+textarea { @extend .input; -webkit-appearance: none;  }
+select, datalist {  @extend .input;}
+
+
+input[type="radio"],
+input[type="checkbox"] {margin-right: 10px;}
+
+
+button,
+input[type="button"],
+input[type="submit"] { @extend .btn; -webkit-appearance: none; 
+    &:focus {}
+    &:hover {}    
+}
+
+
+

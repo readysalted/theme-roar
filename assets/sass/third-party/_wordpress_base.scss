@@ -1,0 +1,115 @@
+.screen-reader-text { @include visuallyhidden; }
+.wp-smiley {border: none; margin-bottom: 0; margin-top: 0; padding: 0;}
+
+
+// * = Alignment -------------------------------------------------------------- */
+.alignright { display: block; margin: 1em auto;
+    @media screen and (min-width: $medium) {float: right;  max-width: 40%; position: relative;  margin: 0 0 1em 1em;  }
+}
+.alignleft { display: block; margin: 1em auto;
+    @media screen and (min-width: $medium) { float: left;   max-width: 40%; position: relative; margin: 0 1em 1em 0; }
+}
+
+.aligncenter, div.aligncenter { display: block; margin: 1em auto;}
+
+img.alignleft, img.alignright, a img.alignleft, a img.alignright { 
+    @media screen and (min-width: $medium) { max-width: 40%!important; width: auto!important; height: auto!important; }
+}
+
+a img.aligncenter, img.aligncenter  { display: block; margin-right: auto; margin-left: auto;}
+
+.alignnone { clear: both; display: block; margin: 1em 0; max-width: 100% !important;
+	img {height: auto !important; max-width: 100% !important; width: auto !important;}
+}
+img.alignnone { clear: both; display: block; margin: 1em 0; max-width: 100% !important; height: auto !important; max-width: 100% !important; width: auto !important;}
+
+// * = Captions-------------------------------------------------------------- */
+
+$caption-bg : #ffffff;
+$caption-border: #f1f1f1;
+
+.wp-caption { display: block; background-color: $caption-bg; border: 1px solid $caption-border; text-align: center; padding: 5px 1px;
+	img {@include zero; height: auto !important; max-width: 100% !important; border: 0; }
+}
+.wp-caption-text {	@include zero;	@include fontsize(12); text-align: center; padding: 5px 0;}
+
+.wp-caption img[class*="wp-image-"] {display: block; margin-left: auto;	margin-right: auto;}
+
+
+// * = Responsive Images -------------------------------------------------------------- */
+
+img[class*="align"], img[class*="wp-image-"] { height: auto; max-width: 100%; width: auto; }
+img.size-full { max-width: 100%; width: auto; }
+
+
+// * = Navigation  -------------------------------------------------------------- */
+.post-navigation {	@include fontsize(14); clear: both;	padding: 2em 1.5em; text-align: center;	
+    .nav-previous {	
+		@media screen and (min-width: $medium) {float: left; text-align: left; width: 47.5%;	}
+	}
+	.nav-next {
+		@media screen and (min-width: $medium) {float: right; text-align: right; width: 47.5%;	}
+	}
+}
+
+// * = Gallery -------------------------------------------------------------- */
+
+$gallery-spacing : 5px;
+
+.gallery { padding: 0; margin: 0 0 0 -$gallery-spacing; display: flex;  flex-wrap: wrap; 
+    dt {  padding-left: $gallery-spacing; padding-bottom: $gallery-spacing;}
+    img { width: 100%; height: auto;}
+    a {  display: block; @include zero; }
+    dl { @include zero;}
+    br { display: none;}
+}
+
+.gallery-caption { @extend .wp-caption-text; }
+
+.gallery-columns-2 { 
+    dl {   
+        width: $span-1-2; 
+    }
+}
+
+.gallery-columns-3 {   
+    dl {width: $span-1-3;} 
+}
+
+.gallery-columns-4 {   
+    dl { 	width: $span-1-2;
+        @media screen and (min-width: $small-medium) {width: $span-1-4;}     
+    }
+}
+
+.gallery-columns-5 {    
+    dl {   width: $span-1-3; 
+        @media screen and (min-width: $medium) {width: $span-1-5;   }       
+    }
+}
+
+.gallery-columns-6 {  
+    dl { width: $span-1-3;
+          @media screen and (min-width: $medium) {	width: $span-1-6;  }      
+    }
+}
+
+.gallery-columns-7 {  
+    dl {  width: $span-1-3;
+        @media screen and (min-width: $small-medium) { width: $span-1-4;}
+          @media screen and (min-width: $medium-large) {	width: $span-1-7;  }      
+    }
+}
+
+.gallery-columns-8 {  
+    dl { width: $span-1-2;   
+        @media screen and (min-width: $small) {	width: $span-1-4;  }
+        @media screen and (min-width: $medium-large) {	width: $span-1-8;  }      
+    }
+}
+
+.gallery-columns-9 {  
+    dl {  width: $span-1-3;  
+          @media screen and (min-width: $medium) {	width: $span-1-9;  }      
+    }
+}

@@ -1,0 +1,7 @@
+.search-form { 
+    input { height:38px; width: auto;float: left; }
+    .search-submit {  @extend .btn; height:38px; float: left;
+        &:focus {}
+        &:hover {}
+    }    
+}

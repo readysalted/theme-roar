@@ -1,0 +1,24 @@
+.social-icons {
+    svg { width: 100%; max-width: 30px; height: auto!important; max-height: 30px; }   
+    .social-icon{ fill:#49C1E7;
+        &:hover {  fill: $brandcolor;}
+    }
+    
+    .facebook { fill:#3b5998;
+        &:hover {  fill: $brandcolor;}
+    }
+    .twitter{fill:#1da1f2;
+        &:hover {  fill: $brandcolor;}
+    }
+    .linkedin{fill:#0077b5;
+        &:hover {  fill: $brandcolor;}
+    }
+    .instagram{fill:#833ab4;
+        &:hover {  fill: $brandcolor;}
+    }
+    .youtube{fill:#ff0000;
+        &:hover {  fill: $brandcolor;}
+    }
+    
+    svg path { fill: inherit;}
+}
