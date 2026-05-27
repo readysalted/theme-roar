@@ -3,20 +3,38 @@
 
 ///LazyLoading
 jQuery('.lazy').Lazy({
-        scrollDirection: 'vertical',
-        effect: 'fadeIn',
-        effectTime: 2000,
-        visibleOnly: true,
-        threshold: 0        
-    });
+    scrollDirection: 'vertical',
+    effect: 'fadeIn',
+    effectTime: 2000,
+    visibleOnly: true,
+    threshold: 0
+});
 
 ///AOS
 //AOS.init();
 
-jQuery(document).ready( function($) {
+jQuery(document).ready(function ($) {
+
+    $('.no-fouc').removeClass('no-fouc');
+
+    function adjustFirstSectionMargin(buffer = 60) {
+        const headerHeight = $('header.main-header').outerHeight() || 0;
+
+        $('main > section:first').css({
+            'margin-top': headerHeight + buffer + 'px'
+        });
+    }
+
+    $(document).ready(function () {
+        adjustFirstSectionMargin();
+    });
+
+    $(window).on('resize', function () {
+        adjustFirstSectionMargin();
+    });
 
     //----------- Slide Nav -----------
-    $('.menu-toggle').on('click', function() {
+    $('.menu-toggle').on('click', function () {
         $(this).toggleClass('active');
         $('.slide-nav').toggleClass('active');
         $('html').toggleClass('menu-active');
@@ -37,22 +55,22 @@ jQuery(document).ready( function($) {
     });
 
     //----------- Match Height -----------
-    $('.resize-wrap').each(function() {
+    $('.resize-wrap').each(function () {
         $(this).find('.resize-me').matchHeight();
     });
 
     //----------- Hero Video -----------
-    $('#videoPlaceholder').on('click', function() {
+    $('#videoPlaceholder').on('click', function () {
         $(this).hide();
         $('#heroVideo').show()[0].play();
     });
-    $('#heroVideo').on('ended', function() {
+    $('#heroVideo').on('ended', function () {
         $(this).hide();
         $('#videoPlaceholder').show();
     });
 
     //-----------  Tab click handler -----------
-    $('.tabs .tab').on('click', function() {
+    $('.tabs .tab').on('click', function () {
         var tabId = $(this).data('tab');
 
         // Remove active class from all tabs and content blocks
@@ -65,7 +83,7 @@ jQuery(document).ready( function($) {
     });
 
     //----------- FAQs -----------
-    $('.faq').on('click', function() {
+    $('.faq').on('click', function () {
         const isActive = $(this).hasClass('active');
         $('.faq').removeClass('active');
         if (!isActive) {
@@ -74,7 +92,7 @@ jQuery(document).ready( function($) {
     });
 
     //----------- View More Testimomnials
-    $('.view-more-button').on('click', function() {
+    $('.view-more-button').on('click', function () {
         $('.masonry-wrapper').addClass('expanded');
         $(this).hide();
     });
@@ -126,27 +144,27 @@ jQuery(document).ready( function($) {
 
 
     //----------- Swiper -----------
-    const swiperCats = new Swiper('.catsSwiper', { 
-        slidesPerView: "auto", 
-        spaceBetween: 10, 
+    const swiperCats = new Swiper('.catsSwiper', {
+        slidesPerView: "auto",
+        spaceBetween: 10,
         freeMode: true,
     });
-    
+
     const swiper = new Swiper('.mySwiper', {
         slidesPerView: 1.2,
         spaceBetween: 40,
         //centeredSlides: true,
         breakpoints: {
-          640: {
-            slidesPerView: 2.2,
-          },
-          1024: {
-            slidesPerView: 3.2,
-          },
-          1450: {
-            slidesPerView: 3,
-          },
-        }, 
+            640: {
+                slidesPerView: 2.2,
+            },
+            1024: {
+                slidesPerView: 3.2,
+            },
+            1450: {
+                slidesPerView: 3,
+            },
+        },
     });
 
     const latestcaseoneSwiper = new Swiper('.latestcaseoneSwiper', {
@@ -168,11 +186,11 @@ jQuery(document).ready( function($) {
             prevEl: ".latestcasetwo-prev",
         },
         breakpoints: {
-          640: {
-            slidesPerView: 2,
-            slidesOffsetAfter: 0,
-          },
-        }, 
+            640: {
+                slidesPerView: 2,
+                slidesOffsetAfter: 0,
+            },
+        },
     });
 
     const swiperMarquee = new Swiper('.swiperMarquee', {
@@ -181,45 +199,45 @@ jQuery(document).ready( function($) {
         loop: true,
         speed: 10000,
         allowTouchMove: true,
-        autoplay:{
+        autoplay: {
             delay: 1,
             disableOnInteraction: false,
         },
         breakpoints: {
-          768: {
-            allowTouchMove: false,
-            spaceBetween: 28,
-          },
+            768: {
+                allowTouchMove: false,
+                spaceBetween: 28,
+            },
         },
     });
 
-    const swipelatest = new Swiper('.swiperlatest', {  
-        slidesPerView: 1.2, 
-        spaceBetween: 32, 
+    const swipelatest = new Swiper('.swiperlatest', {
+        slidesPerView: 1.2,
+        spaceBetween: 32,
         observer: true,
-        observeParents: true, 
+        observeParents: true,
         slidesOffsetBefore: 20,
         slidesOffsetAfter: 20,
         breakpoints: {
-          768: {
-            slidesOffsetBefore: 32,
-            slidesOffsetAfter: 32,
-          },
-          800: {
-            slidesPerView: 2.3, 
-          },
-          1180: {
-            slidesOffsetBefore: 22,
-            slidesOffsetAfter: 22,
-            slidesPerView: 3.25, 
-          },
-          1650: {
-            slidesOffsetBefore: 0,
-            slidesOffsetAfter: 0,
-            slidesPerView: 3,
-            spaceBetween: 32, 
-            width: 1300,
-          },
+            768: {
+                slidesOffsetBefore: 32,
+                slidesOffsetAfter: 32,
+            },
+            800: {
+                slidesPerView: 2.3,
+            },
+            1180: {
+                slidesOffsetBefore: 22,
+                slidesOffsetAfter: 22,
+                slidesPerView: 3.25,
+            },
+            1650: {
+                slidesOffsetBefore: 0,
+                slidesOffsetAfter: 0,
+                slidesPerView: 3,
+                spaceBetween: 32,
+                width: 1300,
+            },
         },
     });
 

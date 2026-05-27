@@ -845,33 +845,14 @@ function custom_posts_per_page_and_offset( $query ) {
 }
 add_action( 'pre_get_posts', 'custom_posts_per_page_and_offset' );
 
-add_action('wp_footer', 'quick_test_script');
+add_action('wp_head', 'add_no_fouc');
 
-function quick_test_script(){
-	?>
-
-<script>
-function adjustFirstSectionMargin(buffer = 60) {
-  const header = document.querySelector('header.main-header');
-  const firstSection = document.querySelector('main > section:first-of-type');
-
-  if (!header || !firstSection) return;
-
-  const headerHeight = header.offsetHeight;
-
-  firstSection.style.marginTop = `${headerHeight + buffer}px`;
-}
-
-// Run on load
-window.addEventListener('load', () => {
-  adjustFirstSectionMargin();
-});
-
-// Optional: recalculate on resize
-window.addEventListener('resize', () => {
-  adjustFirstSectionMargin();
-});
-</script>
-
-<?php
+function add_no_fouc(){
+    ?>
+        <style>
+            .no-fouc{
+                display: none;
+            }
+        </style>
+    <?php
 }

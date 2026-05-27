@@ -31,7 +31,7 @@
         <?php if( get_field('analytics_header_code', 'option') ):  echo get_field('analytics_header_code', 'option'); endif; ?>		
 		<meta name="facebook-domain-verification" content="pi5domk47d249agkwsqd3xhvcrxawg" />
     </head>
-	<body <?php body_class(); ?>>  
+	<body <?php body_class('no-fouc'); ?>>  
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKSRPFW"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
