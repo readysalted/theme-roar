@@ -2,7 +2,7 @@
 
 
 
-    <div class="standard-content standard-casestudy">
+    <section class="standard-content standard-casestudy">
         <div class="container-large">
             <div class="flex-holder">
                 <div class="content-left">
@@ -57,7 +57,7 @@
                 </div> 
             </div>
         </div>
-    </div> 
+    </section> 
 
     <?php get_template_part('tpl/modules/content', 'latestblogs'); ?>
 
