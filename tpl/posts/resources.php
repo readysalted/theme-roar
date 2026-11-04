@@ -101,6 +101,29 @@
 	    </div>
 	</section>
 
+    <?php
+    $pagination = paginate_links( array(
+        'next_text' => '<span class="screen-reader-text">Next page</span>',
+        'prev_text' => '<span class="screen-reader-text">Previous page</span>',
+    ) );
+    if ( $pagination ) :
+        global $wp_query;
+        $paged = max( 1, (int) get_query_var( 'paged' ) );
+        ?>
+        <nav class="pagination" aria-label="Resources pagination">
+            <div class="container-large">
+                <div class="flex-holder">
+                    <div class="pageination-left">
+                        <?php echo esc_html( 'Page ' . $paged . ' of ' . $wp_query->max_num_pages ); ?>
+                    </div>
+                    <div class="pageination-right">
+                        <?php echo $pagination; ?>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    <?php endif; ?>
+
     <?php get_template_part('tpl/modules/content', 'brandslider'); ?>
     <?php get_template_part('tpl/modules/content', 'genericcta'); ?>
 

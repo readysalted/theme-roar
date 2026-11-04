@@ -1,0 +1,36 @@
+/* Preview-page layout only. The embedded forms keep their GHL styling. */
+.roar-ghl-preview > section {
+    padding-bottom: 80px;
+}
+
+.roar-ghl-preview h1 {
+    margin-bottom: 24px;
+}
+
+.roar-ghl-preview__form {
+    max-width: 900px;
+    margin-top: 32px;
+}
+
+.roar-ghl-preview__columns {
+    display: grid;
+    grid-template-columns: minmax(0, 440px) minmax(0, 1fr);
+    gap: 48px;
+    align-items: start;
+}
+
+.roar-ghl-preview__newsletter {
+    min-width: 0;
+}
+
+@media (max-width: 1039px) {
+    .roar-ghl-preview__columns {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .roar-ghl-preview__newsletter {
+        grid-row: 2;
+        max-width: 440px;
+        width: 100%;
+    }
+}
