@@ -23,6 +23,6 @@
 	 		});
 	 	}
 	</script> 
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9mLduOLwioOevs2LuCRtr9LT1EU22IhI&callback=initMap"></script>
+	<script async defer src="<?php echo esc_url( add_query_arg( array( 'key' => get_option( 'roar_google_maps_api_key', '' ), 'callback' => 'initMap' ), 'https://maps.googleapis.com/maps/api/js' ) ); ?>"></script>
 	</div>
 </section>
