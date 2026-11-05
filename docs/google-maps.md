@@ -3,6 +3,10 @@
 The map module used by About and Contact reads its Maps JavaScript API key
 from the WordPress option `roar_google_maps_api_key`.
 
+Administrators can replace the key under **Settings > General > Google Maps API key**,
+then click **Save Changes**. The field masks its current value. Invalid or empty
+values are rejected and the existing key is kept.
+
 Configure this option separately for each environment, using the key supplied
 through the password manager. The key is deliberately not stored in this repository.
 The production option was configured on 5 November 2026.

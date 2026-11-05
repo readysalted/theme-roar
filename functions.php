@@ -856,3 +856,42 @@ function add_no_fouc(){
         </style>
     <?php
 }
+
+// Google Maps key for the public About and Contact maps.
+add_action( 'admin_init', 'roar_register_google_maps_setting' );
+
+function roar_register_google_maps_setting() {
+    register_setting( 'general', 'roar_google_maps_api_key', array(
+        'type' => 'string',
+        'sanitize_callback' => 'roar_sanitize_google_maps_key',
+        'show_in_rest' => false,
+    ) );
+
+    add_settings_field(
+        'roar_google_maps_api_key',
+        'Google Maps API key',
+        'roar_render_google_maps_key_field',
+        'general',
+        'default',
+        array( 'label_for' => 'roar_google_maps_api_key' )
+    );
+}
+
+function roar_sanitize_google_maps_key( $value ) {
+    $value = is_string( $value ) ? trim( $value ) : '';
+    if ( ! preg_match( '/^AIza[0-9A-Za-z_-]{35}$/', $value ) ) {
+        add_settings_error( 'roar_google_maps_api_key', 'roar_maps_invalid_key', 'Please enter a valid Google Maps API key. The existing key has been kept.' );
+        return get_option( 'roar_google_maps_api_key', '' );
+    }
+    return $value;
+}
+
+function roar_render_google_maps_key_field() {
+    ?>
+    <input type="password" id="roar_google_maps_api_key" name="roar_google_maps_api_key"
+        value="<?php echo esc_attr( get_option( 'roar_google_maps_api_key', '' ) ); ?>"
+        class="regular-text" autocomplete="new-password" spellcheck="false"
+        aria-describedby="roar-google-maps-key-description" />
+    <p class="description" id="roar-google-maps-key-description">Used for the maps on the About Us and Contact pages. Paste the replacement key and click Save Changes.</p>
+    <?php
+}
